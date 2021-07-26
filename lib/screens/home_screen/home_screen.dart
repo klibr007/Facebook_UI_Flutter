@@ -1,4 +1,5 @@
 import 'package:facebookui/config/palette.dart';
+import 'package:facebookui/data/data.dart';
 import 'package:facebookui/screens/home_screen/widgets/home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -32,8 +33,11 @@ class HomeScreen extends StatelessWidget {
                 icon: MdiIcons.facebookMessenger,
                 iconSize: 30.0,
                 onPress: () => {print("Messenger")},
-              )
+              ),
             ],
+          ),
+          SliverToBoxAdapter(
+            child: CreatePostContainer(currentUser: currentUser),
           )
         ],
       ),
